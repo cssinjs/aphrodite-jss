@@ -52,7 +52,7 @@
     "version": "node -e \"console.log(require('./package.json').version)\""
   },
   "dependencies": {
-    "jss": "^5.3.0",
+    "jss": "^5.4.0",
     "jss-preset-default": "^0.1.1"
   }
 }

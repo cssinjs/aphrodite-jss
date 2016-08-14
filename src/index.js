@@ -1,7 +1,7 @@
 import {create} from 'jss'
 import preset from 'jss-preset-default'
 
-export default function aphrodisiac(jss, options = {}) {
+export default function aphrodisiac(jss, options) {
   const sheet = jss
     .createStyleSheet(null, {meta: 'aphrodite-jss', ...options})
     .attach()
