@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script src="../dist/aphrodisiac.js"></script>
+  </head>
+  <body>
+    <script>
+
+      var StyleSheet = aphrodisiac.StyleSheet
+      var css = aphrodisiac.css
+      var sheet = StyleSheet.create({
+        button: {
+          color: 'red'
+        },
+        big: {
+          fontSize: 20
+        }
+      })
+      document.body.innerHTML = '<button class="' + css(sheet.button, sheet.big) +'">A button</button>'
+
+      document.body.innerHTML += '<button class="' + css(sheet.button, sheet.big) +'">A button</button>'
+
+    </script>
+  </body>
+</html>
