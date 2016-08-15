@@ -2,17 +2,17 @@
 
 This project is a merge of good ideas from [aphrodite](https://github.com/Khan/aphrodite) and [JSS](https://github.com/cssinjs/jss). It provides an API of aphrodite but fixes lots of limitations and caveats by using JSS as a rendering engine under the hood.
 
-## Reimplemented good parts.
+## Good parts from aphrodite.
 
-- Pretty much like inline styles known from React, except it allows to use all of CSS.
-- No CSS is generated until `css()` invocation. Only the passed rules are converted to a CSS string and injected.
+- Pretty much like inline styles known from React, except it allows to use the entire CSS.
+- No CSS is generated until `css()` function invocation. Only the passed rules are converted to a CSS string and injected.
 - Theming is possible without any headache or framework integrations.
 
 ## Benefits compared to aphrodite.
 
-- More powerfull rendering abstraction [JSS](https://github.com/cssinjs/jss) under the hood. You are using all it's plugins and [JSON DSL](https://github.com/cssinjs/jss/blob/master/docs/json-api.md). To name a few:
-  - Supports children, siblings and any other kinds of selectors. ([jss-nested](https://github.com/cssinjs/jss-nested))
-  - Support for global styles, without auto namespacing. (option `{named: false}`)
+- More powerfull rendering abstraction through [JSS](https://github.com/cssinjs/jss) under the hood. You are using all it's plugins and [JSON DSL](https://github.com/cssinjs/jss/blob/master/docs/json-api.md). To name a few:
+  - Children, siblings and any other kinds of selectors. ([jss-nested](https://github.com/cssinjs/jss-nested))
+  - Global styles, without auto namespacing. (JSS option `{named: false}`)
 - Immediate render upon `css()` call invocation. It gives you an access to computed styles right after render, no need to use `setTimeout()`. It also avoids additional recalcs and repaints, which can cause flickers and general performance overhead.
 - No auto "!important" insertion. You can write a plugin for this though.
 
@@ -64,13 +64,15 @@ document.body.innerHTML = `
 
 Create function doesn't render anything, it just registers your styles.
 
+Returns an object, where key names correspond the original styles obejct.
+
 ### Inject rules.
 
 `css(rule1, [rule2], [rule3], ...)`
 
-Injects the previousely defined rule to the dom. This is done in sync, so the CSS rule is immediately available.
+Injects a previously defined rule to the dom. This is done in sync, so the CSS rule is immediately available.
 
-It returns a class name string.
+Returns a class name.
 
 ### Styles format.
 
@@ -80,7 +82,9 @@ The format for styles in defined in [jss](https://github.com/cssinjs/jss/blob/ma
 
 `aphrodisiac(jss, [options])`
 
-You can pass your own JSS instance with your plugins setup. It will return the aphrodite's interface.
+You can pass your own JSS instance with your custom setup.
+
+Return the aphrodite's interface.
 
 ```javascript
 import aphrodisiac from 'aphrodisiac'
