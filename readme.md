@@ -76,7 +76,7 @@ Returns a class name.
 
 ### Styles format.
 
-The format for styles in defined in [jss](https://github.com/cssinjs/jss/blob/master/docs/json-api.md). Aprodisiac uses [jss-preset-default](https://github.com/cssinjs/jss-preset-default), so all default presets are already in place.
+The format for styles is defined in [jss](https://github.com/cssinjs/jss/blob/master/docs/json-api.md). Aprodisiac uses [jss-preset-default](https://github.com/cssinjs/jss-preset-default), so all default presets are already in place.
 
 ### Customizing JSS.
 
@@ -84,7 +84,7 @@ The format for styles in defined in [jss](https://github.com/cssinjs/jss/blob/ma
 
 You can pass your own JSS instance with your custom setup.
 
-Return the aphrodite's interface.
+Returns aphrodite's interface.
 
 ```javascript
 import aphrodisiac from 'aphrodisiac'
