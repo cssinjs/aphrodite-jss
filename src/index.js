@@ -22,7 +22,7 @@ export default function aphrodisiac(jss, options) {
 
     if (sheet.getRule(className)) return className
 
-    const style = rules.reduce((res, rule) => Object.assign(res, rule.style), {})
+    const style = rules.reduce((res, rule) => ({...res, ...rule.style}), {})
 
     // TODO make jss accept options here.
     sheet.addRule(className, style, {className})
