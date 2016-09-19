@@ -1,4 +1,4 @@
-## Aphrodite like API on top of JSS.
+## Aphrodite-like API on top of JSS.
 
 This project is a merge of good ideas from [aphrodite](https://github.com/Khan/aphrodite) and [JSS](https://github.com/cssinjs/jss). It provides an API of aphrodite but fixes lots of limitations and caveats by using JSS as a rendering engine under the hood.
 
@@ -92,11 +92,6 @@ import {create} from 'jss'
 
 const {css, StyleSheet} = aphrodisiac(create())
 ```
-
-## Todo
-
-- @media
-- @keyframes
 
 ## License
 

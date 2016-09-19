@@ -27,6 +27,9 @@
           '& span': {
             marginRight: 5,
             color: '#fff'
+          },
+          '@media (min-width: 600px)': {
+            fontSize: 20
           }
         },
         primary: {
@@ -36,15 +39,13 @@
           '&:hover': {
             backgroundImage: 'linear-gradient(to bottom, #3c9def 0%, #1385e5 100%)'
           }
-        },
-        '@media (min-width: 600px)': {
-          button: {
-            fontSize: 20
-          }
         }
       })
+
       document.body.innerHTML =
       '<button class="' + css(sheet.button, sheet.primary) +'"><span>&#10004;</span>Primary</button>'
+
+      console.log(aphrodisiac.sheet.toString())
     </script>
   </body>
 </html>
