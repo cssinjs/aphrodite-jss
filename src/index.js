@@ -5,7 +5,14 @@ const isNotFalsy = val => val != null
 const getClassName = rule => rule.className
 
 export default function aphrodisiac(jss, options) {
-  const sheet = jss.createStyleSheet(null, {meta: 'aphrodite-jss', ...options}).attach()
+  const renderSheet = () => (
+    jss.createStyleSheet(null, {
+      meta: 'aphrodite-jss',
+      ...options
+    }).attach()
+  )
+
+  let sheet = renderSheet()
 
   function css(...rules) {
     // Filter out falsy values from the input, to allow for
@@ -35,10 +42,21 @@ export default function aphrodisiac(jss, options) {
     }, {})
   }
 
+  function reset() {
+    sheet.detach()
+    jss.sheets.remove(sheet)
+    sheet = renderSheet()
+  }
+
+  function toString() {
+    return sheet.toString()
+  }
+
   return {
-    css,
     StyleSheet: {create: register},
-    sheet
+    css,
+    reset,
+    toString
   }
 }
 
