@@ -54,10 +54,11 @@ export default function aphrodisiac(jss, options) {
 
   return {
     StyleSheet: {create: register},
+    sheet,
     css,
     reset,
     toString
   }
 }
 
-export const {css, StyleSheet, sheet} = aphrodisiac(create(preset()))
+export const {css, StyleSheet, sheet, reset, toString} = aphrodisiac(create(preset()))
