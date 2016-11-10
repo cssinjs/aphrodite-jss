@@ -96,7 +96,7 @@ const {css, StyleSheet} = aphrodisiac(create())
 ### Serverside Rendering.
 
 There are 2 functions you need to know - `toString()` and `reset()`.
-As aphrodisiac can not know that you are rendering a new request, you need to get the CSS (`toString()`) when you are processing the first request and call `reset()` to clean up the styles your current page has produced.
+As aphrodisiac can not know that you are rendering a new response, you need to get the CSS (`toString()`) when you are processing the first request and call `reset()` to clean up the styles your current page has produced.
 
 
 ```javascript
