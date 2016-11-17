@@ -1,7 +1,7 @@
 {
   "name": "aphrodisiac",
   "description": "Aphrodite-like API on top of JSS.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
