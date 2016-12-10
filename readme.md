@@ -12,7 +12,7 @@ This project is a merge of good ideas from [aphrodite](https://github.com/Khan/a
 
 - More powerfull rendering abstraction through [JSS](https://github.com/cssinjs/jss) under the hood. You are using all it's plugins and [JSON DSL](https://github.com/cssinjs/jss/blob/master/docs/json-api.md). To name a few:
   - Children, siblings and any other kinds of selectors. ([jss-nested](https://github.com/cssinjs/jss-nested))
-  - Global styles, without auto namespacing. (JSS option `{named: false}`)
+  - Global styles, without auto namespacing ([jss-global](https://github.com/cssinjs/jss-global)).
 - Immediate render upon `css()` call invocation. It gives you an access to computed styles right after render, no need to use `setTimeout()`. It also avoids additional recalcs and repaints, which can cause flickers and general performance overhead.
 - No auto "!important" insertion. You can write a plugin for this though.
 

@@ -1,3 +1,11 @@
+## 1.0.0 / 2016-12-10
+
+- update to jss 6.0
+- fix "adding an @media rule throws" cssinjs/jss#363
+- use "inline-version" babel plugin
+- export es3 ready code
+- add lit-staged
+
 ## 0.4.0 / 2016-11-17
 
 - introduce reset() and toString()

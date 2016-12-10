@@ -1,33 +1,33 @@
 import {create} from 'jss'
 import preset from 'jss-preset-default'
+import hash from 'murmurhash-js/murmurhash3_gc'
 
+const meta = 'aphrodisiac'
 const isNotFalsy = val => val != null
 const getClassName = rule => rule.className
+const generateClassName = (name, str) => `${name}-${hash(name + str + meta)}`
+const mergeStyles = (style, rule) => ({...style, ...rule.style})
 
 export default function aphrodisiac(jss, options) {
   const renderSheet = () => (
-    jss.createStyleSheet(null, {
-      meta: 'aphrodite-jss',
-      ...options
-    }).attach()
+    jss.createStyleSheet(null, {meta, ...options}).attach()
   )
 
   let sheet = renderSheet()
 
   function css(...rules) {
-    // Filter out falsy values from the input, to allow for
-    // `css(a, test && c)`
+    // Filter falsy values to allow `css(a, test && c)`.
     rules = rules.filter(isNotFalsy)
 
     if (!rules.length) return ''
 
-    // A compound class name from all rules.
+    // A joined class name from all rules.
     const className = rules.map(getClassName).join('--')
 
-    if (!sheet.getRule(className)) {
-      const style = rules.reduce((res, rule) => ({...res, ...rule.style}), {})
-      sheet.addRule(className, style, {className})
-    }
+    if (sheet.getRule(className)) return className
+
+    const style = rules.reduce(mergeStyles, {})
+    sheet.addRule(className, style, {className})
 
     return className
   }
@@ -35,7 +35,7 @@ export default function aphrodisiac(jss, options) {
   function register(styles) {
     return Object.keys(styles).reduce((map, name) => {
       map[name] = {
-        className: jss.generateClassName(JSON.stringify(styles[name]), {name}),
+        className: generateClassName(name, JSON.stringify(styles[name])),
         style: styles[name]
       }
       return map
@@ -48,16 +48,13 @@ export default function aphrodisiac(jss, options) {
     sheet = renderSheet()
   }
 
-  function toString() {
-    return sheet.toString()
-  }
-
   return {
     StyleSheet: {create: register},
+    toString: () => sheet.toString(),
     css,
     reset,
-    toString
+    version: __VERSION__
   }
 }
 
-export const {css, StyleSheet, reset, toString} = aphrodisiac(create(preset()))
+export const {css, StyleSheet, reset, toString, version} = aphrodisiac(create(preset()))
