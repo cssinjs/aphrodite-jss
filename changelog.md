@@ -1,3 +1,7 @@
+## 1.0.1 / 2017-02-25
+
+- fix falsy values filter
+
 ## 1.0.0 / 2016-12-10
 
 - update to jss 6.0
