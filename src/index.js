@@ -3,7 +3,7 @@ import preset from 'jss-preset-default'
 import hash from 'murmurhash-js/murmurhash3_gc'
 
 const meta = 'aphrodisiac'
-const isNotFalsy = val => val != null
+const isNotFalsy = val => !!val
 const getClassName = rule => rule.className
 const generateClassName = (name, str) => `${name}-${hash(name + str + meta)}`
 const mergeStyles = (style, rule) => ({...style, ...rule.style})
