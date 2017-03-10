@@ -20,7 +20,7 @@ This project is a merge of good ideas from [aphrodite](https://github.com/Khan/a
 ## Example
 
 ```javascript
-import {StyleSheet, css} from 'aphrodisiac'
+import {StyleSheet, css} from 'aphrodite-jss'
 
 const sheet = StyleSheet.create({
   button: {
@@ -80,27 +80,27 @@ The format for styles is defined in [jss](https://github.com/cssinjs/jss/blob/ma
 
 ### Customizing JSS.
 
-`aphrodisiac(jss, [options])`
+`aphroditeJss(jss, [options])`
 
 You can pass your own JSS instance with your custom setup.
 
 Returns aphrodite's interface.
 
 ```javascript
-import aphrodisiac from 'aphrodisiac'
+import aphroditeJss from 'aphrodite-jss'
 import {create} from 'jss'
 
-const {css, StyleSheet} = aphrodisiac(create())
+const {css, StyleSheet} = aphroditeJss(create())
 ```
 
 ### Serverside Rendering.
 
 There are 2 functions you need to know - `toString()` and `reset()`.
-As aphrodisiac can not know that you are rendering a new response, you need to get the CSS (`toString()`) when you are processing the first request and call `reset()` to clean up the styles your current page has produced.
+As aphrodite-jss can not know that you are rendering a new response, you need to get the CSS (`toString()`) when you are processing the first request and call `reset()` to clean up the styles your current page has produced.
 
 
 ```javascript
-import {toString, reset} from 'aphrodisiac'
+import {toString, reset} from 'aphrodite-jss'
 
 function render() {
   const app = renderApp()

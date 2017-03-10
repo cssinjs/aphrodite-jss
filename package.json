@@ -1,5 +1,5 @@
 {
-  "name": "aphrodisiac",
+  "name": "aphrodite-jss",
   "description": "Aphrodite-like API on top of JSS.",
   "version": "1.0.1",
   "scripts": {
@@ -7,8 +7,8 @@
     "clean": "rm -fr ./lib/*",
     "build": "npm run clean && npm run build:lib && npm run build:max && npm run build:min",
     "build:lib": "cross-env babel src --out-dir lib",
-    "build:max": "cross-env NODE_ENV=development webpack src/index.js dist/aphrodisiac.js",
-    "build:min": "cross-env NODE_ENV=production webpack src/index.js dist/aphrodisiac.min.js",
+    "build:max": "cross-env NODE_ENV=development webpack src/index.js dist/aphrodite-jss.js",
+    "build:min": "cross-env NODE_ENV=production webpack src/index.js dist/aphrodite-jss.min.js",
     "lint": "eslint ./src ./tests ./benchmark ./*.js",
     "lint:staged": "lint-staged",
     "prepublish": "npm run all"
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:cssinjs/aphrodisiac.git"
+    "url": "git@github.com:cssinjs/aphrodite-jss.git"
   },
   "keywords": [
     "jss",

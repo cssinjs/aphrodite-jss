@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   output: {
-    library: 'aphrodisiac',
+    library: 'aphroditeJss',
     libraryTarget: 'umd'
   },
   plugins,
