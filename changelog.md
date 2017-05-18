@@ -1,3 +1,9 @@
+## 1.1.0 / 2017-05-19
+
+- update to JSS v7.1.2 and jss-preset-default v2.0.0
+- update dev deps
+- add yarn.lock
+
 ## 1.0.3 / 2017-04-03
 
 - relax engine version
