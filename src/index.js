@@ -2,13 +2,13 @@ import {create} from 'jss'
 import preset from 'jss-preset-default'
 import hash from 'murmurhash-js/murmurhash3_gc'
 
-const meta = 'aphrodisiac'
+const meta = 'aphrodite-jss'
 const isNotFalsy = val => !!val
 const getClassName = rule => rule.className
 const generateClassName = (name, str) => `${name}-${hash(name + str + meta)}`
 const mergeStyles = (style, rule) => ({...style, ...rule.style})
 
-export default function aphrodisiac(jss, options) {
+export default function aphroditeJss(jss, options) {
   const renderSheet = () => (
     jss.createStyleSheet(null, {meta, ...options}).attach()
   )
@@ -57,4 +57,4 @@ export default function aphrodisiac(jss, options) {
   }
 }
 
-export const {css, StyleSheet, reset, toString, version} = aphrodisiac(create(preset()))
+export const {css, StyleSheet, reset, toString, version} = aphroditeJss(create(preset()))
