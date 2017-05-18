@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script src="../dist/aphrodisiac.js"></script>
+    <script src="../dist/aphrodite-jss.js"></script>
   </head>
   <style>
     body {
@@ -9,8 +9,8 @@
   </style>
   <body>
     <script>
-      var StyleSheet = aphrodisiac.StyleSheet
-      var css = aphrodisiac.css
+      var StyleSheet = aphroditeJss.StyleSheet
+      var css = aphroditeJss.css
 
       var sheet = StyleSheet.create({
         button: {
@@ -45,7 +45,7 @@
       document.body.innerHTML =
       '<button class="' + css(sheet.button, sheet.primary) +'"><span>&#10004;</span>Primary</button>'
 
-      console.log(aphrodisiac.toString())
+      console.log(aphroditeJss.toString())
     </script>
   </body>
 </html>
