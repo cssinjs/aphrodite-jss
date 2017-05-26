@@ -1,3 +1,8 @@
+## 1.1.1 / 2017-05-26
+
+- fix linter
+- use jss.removeStyleSheet
+
 ## 1.1.0 / 2017-05-19
 
 - update to JSS v7.1.2 and jss-preset-default v2.0.0
