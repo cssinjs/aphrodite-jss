@@ -27,7 +27,7 @@ export default function aphroditeJss(jss, options) {
     if (sheet.getRule(className)) return className
 
     const style = rules.reduce(mergeStyles, {})
-    sheet.addRule(className, style, {className})
+    sheet.addRule(className, style, {selector: `.${className}`})
 
     return className
   }
