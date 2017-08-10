@@ -1,3 +1,8 @@
+## 2.0.0 / 2017-08-10
+
+- Add package-lock.json, remove yarn.lock
+- Update to JSS v8
+
 ## 1.1.1 / 2017-05-26
 
 - fix linter
