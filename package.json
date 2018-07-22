@@ -11,7 +11,8 @@
     "build:min": "cross-env NODE_ENV=production webpack src/index.js dist/aphrodite-jss.min.js",
     "lint": "eslint ./src ./tests ./benchmark ./*.js",
     "lint:staged": "lint-staged",
-    "prepublish": "npm run all"
+    "prepublish": "npm run all",
+    "test": "cross-env BABEL_ENV=test jest ./test"
   },
   "author": {
     "name": "Oleg Slobodskoi",
@@ -51,6 +52,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.5.0",
+    "jest": "^23.4.1",
     "json-loader": "^0.5.4",
     "lint-staged": "^3.4.2",
     "pre-commit": "^1.2.0",
