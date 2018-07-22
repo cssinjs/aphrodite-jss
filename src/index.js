@@ -34,7 +34,7 @@ export default function aphroditeJss(jss, options) {
 
   function register(styles) {
     return Object.keys(styles).reduce((map, name) => {
-      if (name.startsWith('@')) {
+      if (name[0] === '@') {
         sheet.addRule(name, styles[name])
         return map
       }
