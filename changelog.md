@@ -1,3 +1,7 @@
+## 2.1.0 / 2018-07-22
+
+- Support @import, @keyframes, @charset, @font-face, @global
+
 ## 2.0.0 / 2017-08-10
 
 - Add package-lock.json, remove yarn.lock
